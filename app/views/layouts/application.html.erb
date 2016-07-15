@@ -9,6 +9,16 @@
   </head>
 
   <body>
+  	<nav class="class navbar navbar-dark bg-primary">
+  		<%= link_to "FakeBoob", root_path, class:'navbar-brand' %>
+  		<div class="nav navbar-nav">
+  			<ul class="nav navbar-nav">
+  				<li class="nav-item">
+  					<%= link_to "Create An Account", new_user_path, class: 'nav-link' %>
+  				</li>
+  			</ul>
+  		</div>
+  	</nav>
   	<div class="class container">
     	<%= yield %>
   	</div>
