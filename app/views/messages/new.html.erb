@@ -1,0 +1,17 @@
+<%= form_for(@message, url: {action: "create"}) do |f| %>
+	<label class="form-control-label">
+	To:
+	<%= f.select(:recipient_id) do %>
+		<% @users.each do |user| %>
+			<%= content_tag(:option, "#{user.name} (#{user.email})", value: user.id) %>
+		<% end %>
+	<% end %>
+	</label>
+	<div class="form-group">
+		<%= f.label :body, class: 'form-control-label' %>
+		<%= f.text_area :body, class: 'form-control' %>
+	</div>
+	<%= f.button 'Send', class: 'btn btn-primary' %>
+	
+	
+<% end %>

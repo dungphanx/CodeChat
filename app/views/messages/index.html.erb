@@ -1,0 +1,22 @@
+<ul class="list-group col-xs-4">
+	<% @messages.each do |message| %>
+		<li class="list-group-item">
+			<h4>
+			<% if message.sender.email == @current_user.email %>
+				<%= message.recipient.name %>
+			<% else %>
+				<p><%= message.sender.name %></p> 
+			<% end %>
+			</h4>
+
+			<% if message.read_at %>
+				<p>Read at: <%= time_ago_in_words(message.read_at)%> ago</p>
+			<% else %>
+				<b>unread</b>
+			<% end %>
+			<p>Sent at: <%= message.created_at.strftime("%d %b  %Y at %I:%M%p")%></p> 
+			<%= link_to 'Read Now',message_path(message), class: 'btn btn-primary'  %>
+		</li>
+		
+	<% end %>
+</ul>

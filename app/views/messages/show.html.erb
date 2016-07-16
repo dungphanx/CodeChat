@@ -1,0 +1,15 @@
+<h1 class='message-heading'>Message Content</h1>
+<% if !@message.nil? %>
+	<div class="col-xs-4 card">
+		<div class="card-block">
+			<div>
+				<h3><%= @message.sender.name %></h3>
+				<p><%= @message.body %></p>
+				<span class="pull-xs-right">Created at: <%= @message.created_at.strftime("%d %b  %Y at %I:%M%p") %></span>
+			</div>
+			</div>
+				<%= link_to 'Back', messages_path, class: 'btn btn-danger' %>
+			</div>
+		</div>		
+	</div>
+<% end %>

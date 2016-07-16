@@ -1,0 +1,16 @@
+<ul class="list-group col-xs-3">
+	<% @messages.each do |message| %>
+		<li class="list-group-item">
+			<h4>
+				<%= message.recipient.name %>
+			</h4>
+			<% if message.read_at %>
+				<p><b>Read at:</b> <%= message.read_at.strftime("%A, %B %d, %H:%M")  %></p>
+			<% else %>
+				<b>Unread</b>
+			<% end %>
+			<p><%= message.created_at.strftime("%d %b  %Y at %I:%M%p")%></p>
+			<%= link_to 'Read Now',message_path(message), class: 'btn btn-primary'  %>
+		</li>
+	<% end %>
+</ul>

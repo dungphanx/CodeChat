@@ -8,6 +8,10 @@ class UsersController < ApplicationController
 		@user = User.new
 	end
 
+	def show
+		@users = User.all_except(current_user)
+	end
+
 	def create
 		@user = User.new user_params
 
