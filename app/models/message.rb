@@ -2,7 +2,7 @@ class Message < ApplicationRecord
 	belongs_to :sender, class_name: 'User'
 	belongs_to :recipient, class_name: 'User'
 
-	scope :unread, -> {where(read_at: nil)}
+	scope :unread, -> { where(read_at: nil) }
 
 
 	def mark_as_read!
@@ -21,5 +21,7 @@ class Message < ApplicationRecord
     scope :sent, -> (user) do
       where("messages.sender_id = ?", user.id)
 	end
+
+	scope :receiver, ->(user) { where("messages.recipient_id = ?", user) }
    
 end

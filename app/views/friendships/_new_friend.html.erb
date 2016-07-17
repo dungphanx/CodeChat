@@ -1,0 +1,5 @@
+<tr>
+  <td><%= new_friend.name %></td>
+  <td><%= new_friend.email %></td>
+  <td><%= link_to 'Add Friend', friendships_path(friend_id: new_friend.id), method: :post, class: "btn btn-success" %></td>
+</tr>

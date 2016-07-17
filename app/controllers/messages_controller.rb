@@ -1,6 +1,6 @@
 class MessagesController < ApplicationController
 	def index
-		@messages = Message.involving(current_user).order(created_at: :desc)
+		@messages = Message.receiver(current_user).order(created_at: :desc)
 	end
 
 	def show

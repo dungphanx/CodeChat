@@ -10,7 +10,6 @@
 				<b>Unread</b>
 			<% end %>
 			<p><%= message.created_at.strftime("%d %b  %Y at %I:%M%p")%></p>
-			<%= link_to 'Read Now',message_path(message), class: 'btn btn-primary'  %>
 		</li>
 	<% end %>
 </ul>

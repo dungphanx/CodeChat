@@ -1,0 +1,5 @@
+<tr>
+  <td><%= friend.name %></td>
+  <td><%= friend.email %></td>
+  <td><%= link_to 'Remove',friendship_path(id: friend.id), method: :delete, data: {confirm: "Are you sure?"}, class: 'btn btn-danger' %></td>
+</tr>
