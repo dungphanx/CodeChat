@@ -2,11 +2,11 @@
 
 **Name of your app** is a Ruby on Rails blog application that allows users to send messages to each other that can only be read once.
 
-Submitted by: **Your Name Here**
+Submitted by: Dung Phan
 
-Time spent: **X** hours
+Time spent: 20 hours
 
-URL: **Insert your Heroku URL here**
+URL: https://secret-stream-69656.herokuapp.com/app
 
 ## User Stories
 
