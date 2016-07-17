@@ -6,7 +6,7 @@ Submitted by: Dung Phan
 
 Time spent: 20 hours
 
-URL: https://secret-stream-69656.herokuapp.com/app
+URL: https://secret-stream-69656.herokuapp.com
 
 ## User Stories
 
