@@ -34,13 +34,13 @@
   						<%= link_to "Log out #{current_user.name}", logout_path, method: 'delete', class: 'nav-link' %>
   					</li>
   				<% else %>
-  					<li class="nav-item">
-  						<%= link_to "Create An Account", new_user_path, class: 'nav-link' %>
-  					</li>
-	  				<li class="nav-item">
-	  					<%= link_to "Sign In", new_session_path, class: 'nav-link' %>
-	  				</li>
-		  				
+            <li class="pull-xs-right">
+              <%= form_tag sessions_path do %>
+              <%= text_field_tag :email %>
+              <%= password_field_tag :password %>
+              <%= submit_tag "Log In" %>
+              <% end %>
+		  			</li>  
 		  		<% end %>
   			</ul>
   		</div>

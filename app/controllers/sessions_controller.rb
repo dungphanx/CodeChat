@@ -7,14 +7,14 @@ class SessionsController < ApplicationController
   		if @user.authenticate(params[:password])
   			flash[:success] = "Welcome back #{@user.name}!"
   			session[:user_id] = @user.id
-  			redirect_to root_path
+  			redirect_to messages_path
   		else
-  			flash[:error] = "#{@user.errors.full_messages.to_sentence}"
-  			redirect_to new_session_path
+  			flash[:error] = "Password not right!"
+  			redirect_to root_path
   		end
   	else
-  		flash[:error] = "#{@user.errors.full_messages.to_sentence}"
-  		redirect_to new_session_path
+  		flash[:error] = "Please enter your email and password"
+  		redirect_to root_path
   	end
   end
 

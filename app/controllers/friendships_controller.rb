@@ -4,8 +4,7 @@ class FriendshipsController < ApplicationController
 	end
 
 	def new
-		friends = current_user.friends.all.select(:id)
-		@new_friends = User.where.not(id: friends).where.not(id: current_user.id).order(:name)
+		@new_friends = User.not_friend(current_user)
 	end
 
 	def create
