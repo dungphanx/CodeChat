@@ -53,4 +53,5 @@ gem 'bootstrap', '~> 4.0.0.alpha3'
 #gem 'rails-assets-tether'
 
 gem 'bcrypt', '~> 3.1.7'
-
+gem 'carrierwave'
+gem 'mini_magick', '~> 4.5', '>= 4.5.1'

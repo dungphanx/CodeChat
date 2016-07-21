@@ -7,6 +7,16 @@ class User < ApplicationRecord
 	has_many :friends, through: :friendships
 	has_many :friendships
 
+	mount_uploader :avatar, AvatarUploader
+
+	def avatar_img
+		if avatar.present?
+			avatar
+		else
+			'http://www.valtine.com/wp-content/themes/intima/images/avatar.jpg'
+		end
+	end
+
 	def self.all_except(user)
   		where.not(id: user)
 	end

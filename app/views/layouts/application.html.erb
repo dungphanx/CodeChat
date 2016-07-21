@@ -30,9 +30,14 @@
             <li class="nav-item ">
               <%= link_to 'My Friend', friendships_path , class: 'nav-link' %>
             </li>
+            
             <li class="nav-item pull-xs-right">
-  						<%= link_to "Log out #{current_user.name}", logout_path, method: 'delete', class: 'nav-link' %>
+  						<%= link_to "Log out", logout_path, method: 'delete', class: 'nav-link' %>
   					</li>
+            <li class="nav-item pull-xs-right">
+              <%= link_to image_tag(current_user.avatar_img) + " #{current_user.name}", current_user, class: 'nav-link' %>
+            </li>
+            
   				<% else %>
             <li class="pull-xs-right">
               <%= form_tag sessions_path do %>
