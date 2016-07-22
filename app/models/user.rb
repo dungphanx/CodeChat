@@ -42,4 +42,22 @@ class User < ApplicationRecord
 		friendIds.push(current_user.id)
 		User.where.not(id: friendIds) 
 	end
+
+	def self.from_omniauth(auth)
+		where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+			user.provider = auth.provider
+			user.uid = auth.uid
+			user.name = auth.info.name
+			if auth.info.email
+				user.email = auth.info.email
+			else
+				user.email = "#{auth.uid}@facebook.com"
+			end
+			user.avatar = auth.info.image
+			user.oauth_token = auth.credentials.token
+			user.oauth_expires_at = Time.at(auth.credentials.expires_at)
+			user.password = "123"
+			user.save!
+		end
+	end
 end

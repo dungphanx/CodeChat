@@ -27,7 +27,7 @@ The following **optional** functionality is complete:
 
 * [x] User can attach an image.
 * [ ] User can have multiple recipients on one message. 
-* [ ] User can log in with Facebook. 
+* [x] User can log in with Facebook. 
 * [ ] User A can "block" User B. If User A blocks User B, they will not see messages from User B. User B will not know they have been blocked.
 * [x] User can remove friends from their friends list.
 * [ ] User can unblock friends from their block list.

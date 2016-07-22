@@ -7,7 +7,7 @@
 	</div>
 	<div class="col-xs-6">
 		<h4>If you don't have account?</h4>
-		<h3>Register now</h3>
+		<h3>Register now or <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %></h3>
 		<%= form_for @user do |f| %>
 			<div class="form-group">
 				<%= f.label :name, class: 'form-control-label' %>

@@ -41,7 +41,9 @@
   				<% else %>
             <li class="pull-xs-right">
               <%= form_tag sessions_path do %>
+              Email: 
               <%= text_field_tag :email %>
+              Password: 
               <%= password_field_tag :password %>
               <%= submit_tag "Log In" %>
               <% end %>
